@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Chat from './components/Chat';
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -11,7 +11,9 @@ export default function Home() {
           <Image src="/logo.png" alt="SuperViral.ai logo" width="380" height="90" />
           <p>This is an interface to talk to the Last Codebender. Ask him anything you want.</p>
         </div>
-        <Chat />
+        <Link href="/chat">
+            <button className="mainButton mt-4">Go to Chat</button>
+        </Link>
       </div>
     </main>
   )
