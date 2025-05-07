@@ -1,5 +1,5 @@
 {
-  "name": "codebender-ai-nextjs",
+  "name": "chatty-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,14 +14,17 @@
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.2.2",
     "ai": "^2.2.31",
-    "autoprefixer": "10.4.15",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "openai": "^4.24.2",
-    "postcss": "8.4.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.4.1"
   }
 }

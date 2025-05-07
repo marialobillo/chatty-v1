@@ -9,7 +9,7 @@ export default function Home() {
       <div className='container'>
         <div className='logoBox'>
           <Image src="/logo.png" alt="SuperViral.ai logo" width="380" height="90" />
-          <p>This is an interface to talk to the Last Codebender. Ask him anything you want.</p>
+          <p>This is an interface to talk to Chatty. Ask anything you want.</p>
         </div>
         <Link href="/chat">
             <button className="mainButton mt-4">Go to Chat</button>
