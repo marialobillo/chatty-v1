@@ -1,5 +1,7 @@
 'use client';
+
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 interface MessageListProps {
   submitType: 'text' | 'image';
@@ -19,10 +21,16 @@ const userColors: Record<string, string> = {
 };
 
 export default function MessageList({ submitType, messages, imageUrl, loading, error }: MessageListProps) {
+  const bottomRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
   if (submitType === 'text') {
     return (
-      <div className="w-full max-w-2xl mx-auto px-4 mt-2 border-gray-200 border">
-      <div className="grid pb-24">
+      <div className="w-full max-w-2xl mx-auto px-4 mt-2 border-gray-200 border min-h-[500px]">
+      <div className="flex flex-col gap-4 pb-24 overflow-y-auto h-[500px]" id="messageContainer">
         {messages.length > 0 ? (
           messages.map((m) => {
             const isUser = m.role === 'user'
@@ -35,7 +43,7 @@ export default function MessageList({ submitType, messages, imageUrl, loading, e
               >
                 {!isUser && (
                   <img
-                    src="https://pagedone.io/asset/uploads/1710412177.png"
+                    src="https://robohash.org/chatty"
                     alt="Assistant avatar"
                     className="w-10 h-11"
                   />
@@ -49,7 +57,7 @@ export default function MessageList({ submitType, messages, imageUrl, loading, e
                     {isUser ? 'You' : 'Chatty'}
                   </h5>
                   <div
-                    className={`px-3.5 py-2 rounded w-max max-w-[90%] w-fit ${
+                    className={`px-3.5 py-2 rounded bg-opacity-90 ${
                       isUser ? 'bg-amber-500 text-white' : 'bg-gray-100 text-gray-900'
                     }`}
                   >
@@ -60,6 +68,7 @@ export default function MessageList({ submitType, messages, imageUrl, loading, e
                   <div className="inline-flex justify-end">
                   </div>
                 </div>
+                <div ref={bottomRef} />
               </div>
             )
           })
