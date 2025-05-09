@@ -21,7 +21,7 @@ const userColors: Record<string, string> = {
 export default function MessageList({ submitType, messages, imageUrl, loading, error }: MessageListProps) {
   if (submitType === 'text') {
     return (
-      <div className="w-full max-w-2xl mx-auto px-4 mt-2">
+      <div className="w-full max-w-2xl mx-auto px-4 mt-2 border-gray-200 border">
       <div className="grid pb-24">
         {messages.length > 0 ? (
           messages.map((m) => {
@@ -49,11 +49,11 @@ export default function MessageList({ submitType, messages, imageUrl, loading, e
                     {isUser ? 'You' : 'Chatty'}
                   </h5>
                   <div
-                    className={`px-3.5 py-2 rounded w-max ${
-                      isUser ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-900'
+                    className={`px-3.5 py-2 rounded w-max max-w-[90%] w-fit ${
+                      isUser ? 'bg-amber-500 text-white' : 'bg-gray-100 text-gray-900'
                     }`}
                   >
-                    <h5 className="text-sm font-normal leading-snug">
+                    <h5 className="text-sm font-normal leading-snug break-words whitespace-pre-wrap">
                       {m.content}
                     </h5>
                   </div>
