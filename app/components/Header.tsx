@@ -7,7 +7,7 @@ export default function Header() {
     <header className="bg-gray-800 text-white py-4 px-6 shadow-md">
       <h1 className="text-2xl font-bold">
         <Link href="/">
-          Chatty Chat
+          Chatty
         </Link>
       </h1>
     </header>
