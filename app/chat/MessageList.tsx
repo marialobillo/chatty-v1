@@ -81,10 +81,10 @@ export default function MessageList({ submitType, messages, imageUrl, loading, e
   }
 
   return (
-    <div className="response">
+    <div className="w-full max-w-2xl mx-auto px-4 mt-2 border-gray-200 border min-h-[500px]">
       {loading && <div className="loading-spinner"></div>}
       {imageUrl && (
-        <Image src={imageUrl} className="image-box" alt="Generated image" width={400} height={400} />
+        <Image src={imageUrl} className="mx-auto" alt="Generated image" width={500} height={400} />
       )}
     </div>
   );
